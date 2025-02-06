@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+    <div class="container">
+        <h1>Add a New Book</h1>
+        <form action="/add" method="POST" class="book-form">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="isbn">ISBN (optional):</label>
+            <input type="text" id="isbn" name="isbn" placeholder="e.g. 9780143127796">
+
+            <label for="read_date">Date Read:</label>
+            <input type="date" id="read_date" name="read_date" required>
+
+            <label for="rating">Rating (1-5):</label>
+            <select id="rating" name="rating" required>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="4"></textarea>
+
+            <button type="submit">Add Book</button>
+        </form>
+
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+
+<%- include("partials/footer.ejs") %>

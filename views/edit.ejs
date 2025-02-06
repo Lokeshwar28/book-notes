@@ -1,0 +1,38 @@
+<%- include("partials/header.ejs") %>
+
+
+<body>
+    <div class="container">
+        <h1>Edit Book</h1>
+        
+        <form action="/edit/<%= book.id %>" method="POST" class="book-form">
+            <label for="title">Book Title:</label>
+            <input type="text" id="title" name="title" value="<%= book.title %>" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="<%= book.author %>" required>
+
+            <label for="isbn">ISBN (optional):</label>
+            <input type="text" id="isbn" name="isbn" value="<%= book.isbn %>">
+
+            <input type="date" id="read_date" name="read_date" 
+       value="<%= book.read_date ? book.read_date.toISOString().split('T')[0] : '' %>" required>
+
+            <label for="rating">Rating (1-5):</label>
+            <select id="rating" name="rating" required>
+                <% for (let i = 1; i <= 5; i++) { %>
+                    <option value="<%= i %>" <%= book.rating == i ? 'selected' : '' %>><%= i %> - <%= ["Poor", "Fair", "Good", "Very Good", "Excellent"][i-1] %></option>
+                <% } %>
+            </select>
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="4"><%= book.notes %></textarea>
+
+            <button type="submit">Update Book</button>
+        </form>
+
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+
+<%- include("partials/footer.ejs") %>

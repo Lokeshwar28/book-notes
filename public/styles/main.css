@@ -1,0 +1,245 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+/* Sorting & Add Button Container */
+.sort-add-container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Sorting Controls */
+.sort-container {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Label inside Sorting */
+.sort-container label {
+    font-size: 16px;
+    color: #198754;
+}
+
+/* Style dropdown */
+.sort-container select {
+    border: none;
+    background-color: green;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style the Add Book Button */
+.custom-button {
+    background-color: white;
+    color: #198754;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #146c43;
+    color: white;
+    border-color: white;
+}
+
+/* Book Cards */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Buttons inside the cards */
+.btn-primary, .btn-danger {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 50%; /* Increased width for better readability on larger screens */
+    max-width: 800px; /* Ensures it doesn't become too wide on big screens */
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    font-size: 28px;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.book-form label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+}
+
+.book-form input,
+.book-form select,
+.book-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.book-form input:focus,
+.book-form select:focus,
+.book-form textarea:focus {
+    border-color: #198754;
+    outline: none;
+    box-shadow: 0 0 5px rgba(25, 135, 84, 0.5);
+}
+
+/* Submit Button */
+.book-form button {
+    background-color: #198754;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.book-form button:hover {
+    background-color: #146c43;
+}
+
+/* Back Link */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Makes the form more readable on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Ensures readability on mobile devices */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .book-form input,
+    .book-form select,
+    .book-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .book-form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+
