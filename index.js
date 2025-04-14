@@ -4,7 +4,7 @@ import pg from "pg";
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
-console.log("🔐 DB URL:", process.env.DATABASE_URL);
+console.log(`🔐 DB URL: ${process.env.DATABASE_URL}`);
 
 const app = express();
 const port = 3000;
@@ -12,8 +12,16 @@ const port = 3000;
 const db = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
 });
-  
-db.connect();
+
+db.connect((err) => {
+    if (err) {
+        console.error("❌ DB connection error:", err);
+    } else {
+        console.log("✅ Successfully connected to Railway DB");
+    }
+});
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
