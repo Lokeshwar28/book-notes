@@ -4,6 +4,7 @@ import pg from "pg";
 import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
+console.log("🔐 DB URL:", process.env.DATABASE_URL);
 
 const app = express();
 const port = 3000;
