@@ -8,13 +8,10 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: 5432,
+const db = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
 });
+  
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -97,8 +94,6 @@ app.get("/edit/:id", async (req, res) => {
     }
 });
 
-
-
 // Update Book in Database
 app.post("/edit/:id", async (req, res) => {
     const { id } = req.params;
@@ -121,7 +116,6 @@ app.post("/edit/:id", async (req, res) => {
         res.status(500).send("Error updating book.");
     }
 });
-
 
 // Delete Book from Database
 app.post("/delete/:id", async (req, res) => {
